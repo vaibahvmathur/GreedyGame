@@ -8,7 +8,7 @@ Steps to follow  :
     6)	Open Git Bash and ( go to new_folder path ) and type Git init           GIT BASH
     7)	Git clone https://github.com/vaibahvmathur/GreedyGame.git               GIT BASH
     8)	Python manage.py runserver					        CMD
-    9)	Type http://127.0.0.1:8000/techapp/  in webbrowser		        CMD
+    9)	Type http://127.0.0.1:8000/search/  or /search/?q=  in webbrowser	CMD
 
 
 
