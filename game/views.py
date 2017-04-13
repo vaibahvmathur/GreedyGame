@@ -1,7 +1,8 @@
 from rest_framework.decorators import api_view
 from django.conf import settings
-import urllib, json
 from rest_framework.response import Response
+import urllib
+import json
 
 
 def GetGoogle(searched_str):
@@ -56,16 +57,19 @@ def HomePage(request):
         searched_str = str(request.GET['q'])
         if searched_str:
             final_result.update({'query': searched_str})
+            # Get Google data
             url, text = GetGoogle(searched_str)
             google = {}
             google.update({'url': str(url)})
             google.update({'text': str(text)})
             result.update({'google': google})
+            # Get DuckDuckgo data
             url, text = GetDuckDuckgo(searched_str)
             duck = {}
             duck.update({'url': str(url)})
             duck.update({'text': str(text)})
             result.update({'duckduckgo': duck})
+            # Get Twitter data
             # GetTwitter(searched_str)
         else:
             result = "Empty String"
